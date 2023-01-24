@@ -10,12 +10,12 @@ For this procedure, use a computer in your datacenter network that can communica
 
 2. Locate the IP Address of your Privileged Enpoint in your AzureStackStampInformation.json file.
 
-3. Open an elevated PowerShell window and run the following commands to create a PowerShell remoting session to the Privileged Endpoint. You will need to replace \<IP Address of ERCS\> with the IP of your Privileged Endpoint
+3. Open an elevated PowerShell window and run the following commands to create a PowerShell remoting session to the Privileged Endpoint. You will need to replace "IP Address of PEP" with the IP of your Privileged Endpoint
 
 ```
 $PEPCredentials = Get-Credential
 
-$PEPSession = New-PSSession -ComputerName \<IP Address of ERCS\> -ConfigurationName PrivilegedEndpoint -Credential $PEPCredentials -SessionOption (New-PSSessionOption -Culture en-US -UICulture en-US)
+$PEPSession = New-PSSession -ComputerName 'IP Address of PEP' -ConfigurationName PrivilegedEndpoint -Credential $PEPCredentials -SessionOption (New-PSSessionOption -Culture en-US -UICulture en-US)
 ```
 
 4. When prompted for credentials, use AzureStack\CloudAdmin as the username and the lab password, then click Ok.
@@ -36,8 +36,10 @@ Communicating with the Privileged Endpoint or (PEP) uses WinRM and PSRemoting. I
 
 2. Next we need to add the PEP IP Address to our trusted hosts. To do that run this command in the PowerShell window.
 
+Add the IP of your PEP to the code below.
+
 ```
-winrm set winrm/config/client '@{TrustedHosts="192.168.200.224"}'
+winrm set winrm/config/client '@{TrustedHosts="IP Address of PEP"}'
 ```
 
 ![](images/Picture4.png)
@@ -45,7 +47,7 @@ winrm set winrm/config/client '@{TrustedHosts="192.168.200.224"}'
 3. Now that we trust the PEP, we can re-run the PSSession command. We do not need to re-run the credential command as the credential is still saved.
 
 ```
-$PEPSession = New-PSSession -ComputerName \<IP Address of ERCS\> -ConfigurationName PrivilegedEndpoint -Credential $PEPCredentials -SessionOption (New-PSSessionOption -Culture en-US -UICulture en-US)
+$PEPSession = New-PSSession -ComputerName 'IP Address of PEP' -ConfigurationName PrivilegedEndpoint -Credential $PEPCredentials -SessionOption (New-PSSessionOption -Culture en-US -UICulture en-US)
 ```
 
 ![](images/Picture5.png)
@@ -82,7 +84,7 @@ For this procedure, use a computer that can communicate with the privileged endp
 1. Run the command below to invoke a command on your PEP Session:
 
 ```
- Invoke-Command -Session $PEPSession -ScriptBlock {Register-CustomAdfs -CustomAdfsName Contoso -CustomADFSFederationMetadataEndpointUri https://adfs.contoso.local/federationmetadata/2007-06/federationmetadata.xml}
+Invoke-Command -Session $PEPSession -ScriptBlock {Register-CustomAdfs -CustomAdfsName Contoso -CustomADFSFederationMetadataEndpointUri 'https://adfs.contoso.local/federationmetadata/2007-06/federationmetadata.xml'}
 ```
 
 ![](images/Picture8.png)
@@ -102,9 +104,9 @@ Set-ServiceAdminOwner -ServiceAdminOwnerUpn "Your Service Admin Account Full UPN
 
 ## Configure relying party on existing AD FS deployment
 
-1. Connect to the Contoso ADFS server using RDP.
+1. Connect to the Contoso ADFS server (10.100.100.11) using RDP.
 
-2. Copy the following content into a .txt file. Save the file as c:\ClaimIssuanceRules.txt on your datacenter's AD FS Server:
+2. Copy the following content into a .txt file. Save the file as c:\ClaimIssuanceRules.txt on your datacenter's ADFS Server:
 
 ```
 @RuleTemplate = "LdapClaims"
@@ -152,12 +154,12 @@ c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccou
 5. Run the following command to add the Relying Party Trust to your ADFS.
 
 ```
- Add-ADFSRelyingPartyTrust -Name AzureStack -MetadataUrl "https://adfs.local.azurestack.external/FederationMetadata/2007-06/FederationMetadata.xml" -IssuanceTransformRulesFile "C:\ClaimIssuanceRules.txt" -AutoUpdateEnabled:$true -MonitoringEnabled:$true -enabled:$true -AccessControlPolicyName "Permit everyone" -TokenLifeTime 1440
+Add-ADFSRelyingPartyTrust -Name AzureStack -MetadataUrl 'https://adfs.local.azurestack.external/FederationMetadata/2007-06/FederationMetadata.xml' -IssuanceTransformRulesFile 'C:\ClaimIssuanceRules.txt' -AutoUpdateEnabled:$true -MonitoringEnabled:$true -enabled:$true -AccessControlPolicyName 'Permit everyone' -TokenLifeTime 1440
 ```
 
 ![](images/Picture11.png)
 
-6. When you use Internet Explorer or the Microsoft Edge browser to access Azure Stack Hub, you must ignore token bindings. Otherwise, the sign-in attempts fail. On your AD FS server, run the following command:
+6. When you use Internet Explorer or the Microsoft Edge browser to access Azure Stack Hub, you must ignore token bindings. Otherwise, the sign-in attempts fail. On your ADFS server, run the following command:
 
 ```
  Set-AdfsProperties -IgnoreTokenBinding $true
