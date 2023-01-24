@@ -146,7 +146,7 @@ $Secret
 6. We can combine the previous command with a command to create our credential object for our Cloud Admin.
 
 ```
-CloudAdminCredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $CloudAdminUserName, ((Get-AzKeyVaultSecret -VaultName $AdminKeyVaultName -Name $CloudAdminSecretName).Secretvalue)
+$CloudAdminCredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $CloudAdminUserName, ((Get-AzKeyVaultSecret -VaultName $AdminKeyVaultName -Name $CloudAdminSecretName).Secretvalue)
 
 $CloudAdminCredential
 ```
