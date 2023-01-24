@@ -105,7 +105,7 @@ Now that we have a Key vault and our local password saved in a secret, we need t
 
 1. Create a folder on C: named Templates. Download the following files and save them to C:\Templates
 
-[azuredeploy.json](https://github.com/RichShillingtonMSFT/Azure-Stack-Hub-Operator-Labs-ADFS/blob/bd19b6b9f6c661cfd35eec0bf4a17e3629a574b4/09-Virtual%20Machines/101-vm-windows-create/azuredeploy.json)
+[azuredeploy.json](https://raw.githubusercontent.com/RichShillingtonMSFT/Azure-Stack-Hub-Operator-Labs-ADFS/main/09-Virtual%20Machines/101-vm-windows-create/azuredeploy.json)
 
 [azuredeploy.parameters.json](https://github.com/RichShillingtonMSFT/Azure-Stack-Hub-Operator-Labs-ADFS/blob/bd19b6b9f6c661cfd35eec0bf4a17e3629a574b4/09-Virtual%20Machines/101-vm-windows-create/azuredeploy.parameters.json)
 
