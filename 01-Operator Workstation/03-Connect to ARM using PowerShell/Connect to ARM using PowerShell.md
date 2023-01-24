@@ -26,7 +26,7 @@ To download the files, right click on the link and choose "Save Link As"
 
 - [Add-AzureStackAdminEnvironment.ps1](https://raw.githubusercontent.com/RichShillingtonMSFT/Azure-Stack-Hub-Operator-Labs-ADFS/main/01-Operator%20Workstation/03-Connect%20to%20ARM%20using%20PowerShell/Add-AzureStackAdminEnvironment.ps1)
 
-- [Add-AzureStackUserEnvironment.ps1](https://github.com/RichShillingtonMSFT/Azure-Stack-Hub-Operator-Labs-ADFS/blob/f52d2b9ea7f3e93841a68363a70211ef3a354685/01-Operator%20Workstation/03-Connect%20to%20ARM%20using%20PowerShell/Add-AzureStackUserEnvironment.ps1)
+- [Add-AzureStackUserEnvironment.ps1](https://raw.githubusercontent.com/RichShillingtonMSFT/Azure-Stack-Hub-Operator-Labs-ADFS/main/01-Operator%20Workstation/03-Connect%20to%20ARM%20using%20PowerShell/Add-AzureStackUserEnvironment.ps1)
 
 2. Open PowerShell and change the working directory to the scripts folder
 
