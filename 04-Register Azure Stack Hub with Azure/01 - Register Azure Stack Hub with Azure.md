@@ -37,7 +37,7 @@ You must register Azure Stack Hub with Azure so you can download Azure Marketpla
 5. For the next step we will perform an online registration with Azure to a subscription located in East US. You will need to add the IP address of your PEP prior to running these commands.
 
 ```
- $PrivilegedEndpoint = 'IP Address of PEP'
+$PrivilegedEndpoint = 'IP Address of PEP'
 
 $CloudAdminCredential = Get-Credential
 
