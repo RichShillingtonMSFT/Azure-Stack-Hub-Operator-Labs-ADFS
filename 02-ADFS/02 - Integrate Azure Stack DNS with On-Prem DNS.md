@@ -23,7 +23,25 @@ If you do not have this information, you can usually find a copy on your HLH or 
 
 ![alt text](images/image1.png)
 
-2. 
+2. Connect to AD-01 (10.100.100.10) using RDP. Open DNS Manager. To open DNS Manager, click Start, point to Administrative Tools, and then click DNS.
 
+![alt text](images/image2.png)
 
+3.	In the console tree, Expand the DNS server AD-01.
 
+4.	In the console tree, right click Conditional Forwarders, and then on the Action menu, click New conditional forwarder.
+
+![alt text](images/image3.png)
+
+![alt text](images/image4.png)
+
+5.	In DNS domain, type the fully qualified domain name (FQDN) “local.azurestack.external”.
+
+6.	Add both IP addresses of the Azure Stacks DNS servers from your AzureStackStampInformation.json, then click Ok
+
+![alt text](images/image5.png)
+
+7.	Open a PowerShell or Command Prompt window and type 
+“nslookup portal.local.azurestack.external” then hit Enter. You should see a Non-authoritative answer.
+
+![alt text](images/image6.png)
