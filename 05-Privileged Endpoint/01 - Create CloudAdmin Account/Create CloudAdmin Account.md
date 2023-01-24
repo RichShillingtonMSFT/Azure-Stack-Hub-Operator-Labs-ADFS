@@ -14,7 +14,7 @@ For this lab, you will be connecting to the PEP. You can use the previous lab Se
 ```
  Invoke-Command -Session $PEPSession -ScriptBlock {Get-Command}
 ```
-[](images/Picture1.png)
+![](images/Picture1.png)
 
 
 1. Now that you have found the command, we need to create a PowerShell credential object to use for your new Cloud Admin account. When prompted provide any username you would like and supply the lab password in the password field, then click Ok.
@@ -23,17 +23,17 @@ For this lab, you will be connecting to the PEP. You can use the previous lab Se
 $NewCloudAdminCredentials = Get-Credential
 ```
 
-[](images/Picture2.png)
+![](images/Picture2.png)
 
 
 4. Now that we have a credential object, we in our local PowerShell session, we need to pass its contents to our remote session. To reference local objects in a remote session, you must use $Using: before the variable name. This tells PowerShell to take these objects from the local session to the remote session.
 
 ```
-Invoke-Command -Session $PEPSession -ScriptBlock { New-CloudAdminUser -UserName $Using:NewCloudAdminCredentials.UserName -Password $Using:NewCloudAdminCredentials.Password }
+Invoke-Command -Session $PEPSession -ScriptBlock { PUTCOMMANDHERE -UserName $Using:NewCloudAdminCredentials.UserName -Password $Using:NewCloudAdminCredentials.Password }
 ```
-[](images/Picture3.png)
+![](images/Picture3.png)
 
 
 5. Once the new Cloud Admin account is created, use Invoke-Command to run Get-Command to pull the command list again. See if you can find the command to get a list of Cloud Admin user accounts. Once you have found that, run the command in a Invoke-Command script block to pull a list of Cloud Admins. You should see the new account you created in the list.
 
-[](images/Picture4.png)
+![](images/Picture4.png)
