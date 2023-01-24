@@ -12,13 +12,15 @@ To integrate your Azure Stack Hub deployment with your DNS infrastructure, you n
 
 The FQDNs for the Azure Stack Hub DNS servers have the following format:
 
-- <NAMINGPREFIX>-ns01.<REGION>.<EXTERNALDOMAINNAME>
-- <NAMINGPREFIX>-ns02.<REGION>.<EXTERNALDOMAINNAME>
+- [NAMINGPREFIX]-ns01.[REGION].[EXTERNALDOMAINNAME]
+- [NAMINGPREFIX]-ns02.[REGION].[EXTERNALDOMAINNAME]
 
 When the deployment is completed, the technician will generally give you a file named AzureStackStampInformation.json.
 This file contains several important pieces of information including the IP Addresses of the Privileged Endpoints, Domain Names, Endpoint URLs and also the DNS Server information required for this step.
 If you do not have this information, you can usually find a copy on your HLH or ASDK machine in C:\CloudDeployment\Logs
 
 1.	Open the AzureStackStampInformation.json and locate the information above.
+
+/images/image.png
 
 
