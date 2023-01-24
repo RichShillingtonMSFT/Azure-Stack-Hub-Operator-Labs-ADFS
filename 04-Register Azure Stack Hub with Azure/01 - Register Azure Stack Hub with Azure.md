@@ -19,7 +19,7 @@ You must register Azure Stack Hub with Azure so you can download Azure Marketpla
 
  **NOTE** : Once connected, If you have multiple subscriptions, run the following command to select the one you want to use:
  ```
- Get-AzSubscription -SubscriptionID '\<Your Azure Subscription GUID\>' | Select-AzSubscription
+ Get-AzSubscription -SubscriptionID 'Your Azure Subscription GUID' | Select-AzSubscription
 ```
 
 3. Run the following command to register the Azure Stack Hub resource provider in your Azure subscription:
