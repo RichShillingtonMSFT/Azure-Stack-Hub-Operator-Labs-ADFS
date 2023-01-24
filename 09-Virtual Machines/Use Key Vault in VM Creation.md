@@ -49,7 +49,7 @@ $Keyvault = New-AzKeyVault -VaultName $VaultName -ResourceGroupName $ResourceGro
 
 Review the text of the error and determine what may have caused the Key Vault service to fail and not be valid for this subscription.
 
-<span style="color:red">New-AzKeyVault : The resource namespace 'Microsoft.KeyVault' is invalid.</span>
+***"New-AzKeyVault : The resource namespace 'Microsoft.KeyVault' is invalid."***
 
 
 6. Once you have fixed the issue you can retry the command to create the Key Vault.
@@ -86,7 +86,7 @@ Set-AzKeyVaultSecret -VaultName $Keyvault.VaultName -Name $SecretName -SecretVal
 
 ![](images/Picture10.png)
 
-<span style="color:red">Set-AzKeyVaultSecret : Access denied to first party service.</span>
+***"Set-AzKeyVaultSecret : Access denied to first party service."***
 
 **HINT:** Check step 6 in LabFiles\05-Privileged Endpoint\02 - Create a Key Vault to Store CloudAdmin Credentials.pdf
 
@@ -103,15 +103,21 @@ Set-AzKeyVaultSecret -VaultName $Keyvault.VaultName -Name $SecretName -SecretVal
 
 Now that we have a Key vault and our local password saved in a secret, we need to reference the key vault and secret in our ARM Template.
 
-1. Browse to C:\LabFiles\09-Virtual Machines\01 - VM Creation with KeyVault\101-vm-windows-create\ and open azuredeploy.parameters.json with VSCode.
+1. Create a folder on C: named Templates. Download the following files and save them to C:\Templates
+
+[azuredeploy.json](https://github.com/RichShillingtonMSFT/Azure-Stack-Hub-Operator-Labs-ADFS/blob/bd19b6b9f6c661cfd35eec0bf4a17e3629a574b4/09-Virtual%20Machines/101-vm-windows-create/azuredeploy.json)
+
+[azuredeploy.parameters.json](https://github.com/RichShillingtonMSFT/Azure-Stack-Hub-Operator-Labs-ADFS/blob/bd19b6b9f6c661cfd35eec0bf4a17e3629a574b4/09-Virtual%20Machines/101-vm-windows-create/azuredeploy.parameters.json)
+
+2. Browse to C:\Templates and open azuredeploy.parameters.json with VSCode.
 
 
-2. Replace the ID with your Key Vault Resource ID you documented earlier and the Secret Name you created. Save and close the file.
+3. Replace the ID with your Key Vault Resource ID you documented earlier and the Secret Name you created. Save and close the file.
 
 ![](images/Picture12.png)
 
 
-3. In your PowerShell connected to AzS-User, create the following variables:
+4. In your PowerShell connected to AzS-User, create the following variables:
 
 ```
 $ResourceGroupName = 'VM-Rg'
@@ -124,13 +130,13 @@ $TemplateParameterFile = 'C:\LabFiles\09-Virtual Machines\01 - VM Creation with 
 
 ![](images/Picture13.png)
 
-4. Create a Resource Group for the VM:
+5. Create a Resource Group for the VM:
 
 ```
 $ResourceGroup = New-AzResourceGroup -Name $ResourceGroupName -Location $location
 ```
 
-5. Deploy the VM:
+6. Deploy the VM:
 
 ```
 New-AzResourceGroupDeployment -Name 'VMDeploy' -ResourceGroupName $ResourceGroup.ResourceGroupName -TemplateFile $TemplateFile -TemplateParameterFile $TemplateParameterFile
@@ -140,43 +146,43 @@ New-AzResourceGroupDeployment -Name 'VMDeploy' -ResourceGroupName $ResourceGroup
 
 ![](images/Picture15.png)
 
-6. Once the deployment is complete, go to the Azure Stack User Portal and navigate to the Virtual machines blade.
+7. Once the deployment is complete, go to the Azure Stack User Portal and navigate to the Virtual machines blade.
 
 
-7. Click on the VM you just deployed. Notice that the VM does not have a Public IP. You will need to add one to connect to the VM from outside of the Virtual Network. Click on Networking.
+8. Click on the VM you just deployed. Notice that the VM does not have a Public IP. You will need to add one to connect to the VM from outside of the Virtual Network. Click on Networking.
 
 ![](images/Picture16.png)
 
 
-8. Click on the Network Interface.
+9. Click on the Network Interface.
 
 ![](images/Picture17.png)
 
-9. Click on the IP Configuration.
+10. Click on the IP Configuration.
 
 ![](images/Picture18.png)
 
-10. Click on Associate to add a Public IP and Configure Required Settings.
+11. Click on Associate to add a Public IP and Configure Required Settings.
 
 ![](images/Picture19.png)
 
-11. Click on Create New.
+12. Click on Create New.
 
 ![](images/Picture20.png)
 
 
-12. Give the Public IP a Name, Choose either Dynamic or Static, then click Ok.
+13. Give the Public IP a Name, Choose either Dynamic or Static, then click Ok.
 
 ![](images/Picture21.png)
 
-13. Click on Save and wait for completion.
+14. Click on Save and wait for completion.
 
 ![](images/Picture22.png)
 
 
-14. Once complete, go back to the Virtual Machines screen and click on the VM. Note the Public IP that is now associated with the VM.
+15. Once complete, go back to the Virtual Machines screen and click on the VM. Note the Public IP that is now associated with the VM.
 
 ![](images/Picture23.png)
 
 
-15. Open RDP and connect to the VM by the Public IP. Login with the username **azureuser** and the password we used for the Key Vault secret.
+16. Open RDP and connect to the VM by the Public IP. Login with the username **azureuser** and the password we used for the Key Vault secret.
