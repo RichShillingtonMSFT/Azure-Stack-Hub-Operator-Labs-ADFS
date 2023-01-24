@@ -22,9 +22,11 @@ Each Azure Stack Hub in your Environment will need to have its own environment e
 
 1. Create a folder on the C: drive name Scripts. Download the following scripts and save them to C:\Scripts
 
-- [Add-AzureStackAdminEnvironment.ps1]()
+To download the files, right click on the link and choose "Save Link As"
 
-- [Add-AzureStackUserEnvironment.ps1]()
+- [Add-AzureStackAdminEnvironment.ps1](https://github.com/RichShillingtonMSFT/Azure-Stack-Hub-Operator-Labs-ADFS/blob/f52d2b9ea7f3e93841a68363a70211ef3a354685/01-Operator%20Workstation/03-Connect%20to%20ARM%20using%20PowerShell/Add-AzureStackAdminEnvironment.ps1)
+
+- [Add-AzureStackUserEnvironment.ps1](https://github.com/RichShillingtonMSFT/Azure-Stack-Hub-Operator-Labs-ADFS/blob/f52d2b9ea7f3e93841a68363a70211ef3a354685/01-Operator%20Workstation/03-Connect%20to%20ARM%20using%20PowerShell/Add-AzureStackUserEnvironment.ps1)
 
 2. Open PowerShell and change the working directory to the scripts folder
 
