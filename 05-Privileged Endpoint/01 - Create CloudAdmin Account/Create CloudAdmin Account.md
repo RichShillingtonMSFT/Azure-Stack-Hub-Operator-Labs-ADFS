@@ -29,7 +29,7 @@ $NewCloudAdminCredentials = Get-Credential
 4. Now that we have a credential object, we in our local PowerShell session, we need to pass its contents to our remote session. To reference local objects in a remote session, you must use $Using: before the variable name. This tells PowerShell to take these objects from the local session to the remote session.
 
 ```
-Invoke-Command -Session $PEPSession -ScriptBlock { New-CloudAdminUser -UserName **$Using:** NewCloudAdminCredentials.UserName -Password **$Using:** NewCloudAdminCredentials.Password }
+Invoke-Command -Session $PEPSession -ScriptBlock { New-CloudAdminUser -UserName $Using:NewCloudAdminCredentials.UserName -Password $Using:NewCloudAdminCredentials.Password }
 ```
 [](images/Picture3.png)
 
