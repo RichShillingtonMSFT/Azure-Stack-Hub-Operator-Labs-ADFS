@@ -21,6 +21,9 @@ If you do not have this information, you can usually find a copy on your HLH or 
 
 1.	Open the AzureStackStampInformation.json and locate the information above.
 
-/images/image.png
+![alt text](images/image1.png)
+
+2. 
+
 
 
