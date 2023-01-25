@@ -1,8 +1,17 @@
-## Create Custom RBAC Role
+# Create Custom RBAC Role
 
 In the next exercise we will focus on Role-based Access Control (RBAC).
 
-1. Open the  **Azure Stack User Portal**
+## Before you begin
+
+1. Create a folder on C: named RBAC: Example: C:\RBAC
+
+2. Download the following file and save it in C:\RBAC.
+[VirtualMachineRestart.json](https://raw.githubusercontent.com/RichShillingtonMSFT/Azure-Stack-Hub-Operator-Labs-ADFS/main/07-Role%20Based%20Access%20Control/VirtualMachineRestart.json)
+
+## Create the Custome RBAC Role.
+
+1. Open the **Azure Stack User Portal**
 
 
 2. Click on All Services, Subscriptions then click on the Development Subscription.
