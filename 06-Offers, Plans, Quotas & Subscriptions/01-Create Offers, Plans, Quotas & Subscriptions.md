@@ -1,4 +1,4 @@
-# Create Offers, Plans, Quotas & a subscription
+# Offers, Plans, Quotas & a subscription
 
 Using quotas, plans, and offers, the Operator is building a capacity management practice by balancing what is available to the users, while at the same time needs to ensure enough capacity is present for future workloads. In the next exercise we will:
 
