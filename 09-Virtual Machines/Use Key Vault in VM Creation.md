@@ -124,9 +124,9 @@ To download the files, right click on the link and choose "Save Link As"
 ```
 $ResourceGroupName = 'VM-Rg'
 
-$TemplateFile = 'C:\LabFiles\09-Virtual Machines\01 - VM Creation with KeyVault\101-vm-windows-create\azuredeploy.json'
+$TemplateFile = 'C:\Templates\azuredeploy.json'
 
-$TemplateParameterFile = 'C:\LabFiles\09-Virtual Machines\01 - VM Creation with KeyVault\101-vm-windows-create\azuredeploy.parameters.json'
+$TemplateParameterFile = 'C:\Templates\azuredeploy.parameters.json'
 
 ```
 
