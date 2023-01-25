@@ -10,10 +10,14 @@ For this quiz you will open three PowerShell windows. Perform each task in its o
 
 ## Connect to the Admin ARM Environment
 
+**NOTE: You may need to establish your AzS-Admin Environment to complete this.**
+
 1. Connect to the Admin ARM Environment ‘AzS-Admin’ using PowerShell.
 2. Using Get-Command and the * for wild card searches, find and run the command used to Get AZ Resource Groups.
 
 ## Connect to the User ARM Environment
+
+**NOTE: You may need to establish your AzS-User Environment to complete this.**
 
 1. Connect to the User ARM Environment ‘AzS-User’ using PowerShell.
 2. Using Get-Command and the * for wild card searches, find and run the command used to Get AZ Resources.
