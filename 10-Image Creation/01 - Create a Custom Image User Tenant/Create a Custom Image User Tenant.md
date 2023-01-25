@@ -78,7 +78,7 @@ $Destination = 'https://imagessa.blob.local.azurestack.external/vhds?sv=2019-02-
 15. AzCopy uses Azure HyperScale API versions by default. In order for it to work with Azure Stack Hub, you must specify the API version for AzCopy to use. In PowerShell, run the following command to set the API version to one compatible with Azure Stack hub.
 
 ```
-$env:AZCOPY\_DEFAULT\_SERVICE\_API\_VERSION="2017-11-09"
+$env:AZCOPY_DEFAULT_SERVICE_API_VERSION="2017-11-09"
 ```
 
 ![](images/Picture10.png)
