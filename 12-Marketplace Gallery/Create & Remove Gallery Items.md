@@ -21,7 +21,7 @@ Thing In this task, you will modify an existing Azure Gallery Packager package, 
 5. In File Explorer, navigate to the C:\Downloads\SamplePackage\DeploymentTemplates folder and open the createuidefinition.json file in VSCode.
 
 
-6. Modify the sku parameter in the imageReference section of the file such that it references a Windows Server 2019 image you created in the previous lab.
+6. Modify the properties in the imageReference section of the file such that it references the Windows Server image you created in the previous lab.
 
 ![](images/Picture1.png)
 
