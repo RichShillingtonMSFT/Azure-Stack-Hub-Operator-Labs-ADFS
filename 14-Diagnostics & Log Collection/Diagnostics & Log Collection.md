@@ -49,7 +49,7 @@ $Source = 'https://logstorage.blob.local.azurestack.external/logs?sv=2019-02-02&
 4. Set the AzCopy API Version
 
 ```
-$env:AZCOPY\_DEFAULT\_SERVICE\_API\_VERSION="2017-11-09"
+$env:AZCOPY_DEFAULT_SERVICE_API_VERSION="2017-11-09"
 ```
 
 5. Use AzCopy with the recursive switch to copy all the files from the Storage Account to your C:\CollectedLogs folder.
