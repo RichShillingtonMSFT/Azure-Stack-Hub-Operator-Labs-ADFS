@@ -17,11 +17,11 @@ Notice the available information on the capacity available in the ASDK and how o
 
 1. On the ASDK, open PowerShell and connect to **AzS-Admin Environment**
 
-2. Login using the  **administrator@contoso.local**  and respective password
+2. Login using the **administrator@contoso.local** and respective password
 
-3. Run  **Get-AzsSubscriberUsage**  and provide the reported start time as yyyy-mm-dd (yesterday) and ReportedEndTime as yyyy-mm-dd (today)
+3. Run **Get-AzsSubscriberUsage** and provide the reported start time as yyyy-mm-dd (yesterday) and ReportedEndTime as yyyy-mm-dd (today)
 
-Example: Get-AzsSubscriberUsage  -ReportedStartTime 2023-01-01 -ReportedEndTime 2023-01-12
+Example: Get-AzsSubscriberUsage -ReportedStartTime 2023-01-01 -ReportedEndTime 2023-01-12
 
 ![](images/Picture2.png)
 
@@ -32,6 +32,7 @@ To use the UsageSummary,
 ```
 Set-Location "$ENV:ProgramFiles\WindowsPowerShell\Modules\AzureStack-Tools-az\Usage"
 ```
+
 ```
 .\Usagesummary.ps1 -StartTime 2021-10-19 -EndTime 2021-10-20 -CsvFile $env:USERPROFILE\Documents\Usage.csv
 ```
