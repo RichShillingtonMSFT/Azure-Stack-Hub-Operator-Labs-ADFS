@@ -14,8 +14,6 @@ To use Azure PowerShell in PowerShell 5.1 on Windows:
 
 ```
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-
-powershell -noprofile
 ```
 
 ![](images/Picture1.png)
