@@ -143,10 +143,10 @@ In **Administrative Tools** , open **Group Policy Management**.
 
 ![](images/Picture25.png)
 
-8. Repeat steps 7-10 to add "NT SERVICE\ALL SERVICES". **Do not click Browse** on step 8, just paste NT SERVICE\ALL SERVICES and click Ok.
+1. Repeat steps 4-7 to add "NT SERVICE\ALL SERVICES". **Do not click Browse** on step 5, just paste NT SERVICE\ALL SERVICES and click Ok.
 **NOTE: This account is only to allow the Windows Internal Database service to login for the lab. In a Production environment, you would install WID first or use a SQL Server database.**
 
-9. Verify the account is correct and click Ok. Close all remaining Group Policy Windows.
+1. Verify the account is correct and click Ok. Close all remaining Group Policy Windows.
 
 ![](images/Picture26.png)
 
