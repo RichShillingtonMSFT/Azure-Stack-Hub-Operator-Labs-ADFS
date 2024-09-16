@@ -56,13 +56,16 @@ AzureStack-Tools is a GitHub repository that hosts PowerShell modules for managi
 1. To get these tools, clone the GitHub repository from the az branch or download the AzureStack-Tools folder by running the following script:
 
 ```
+# Change directory to the root directory.
 cd \
 
+# Download the tools archive.
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 invoke-webrequest https://github.com/Azure/AzureStack-Tools/archive/az.zip -OutFile az.zip
 
-expand-archive az.zip -DestinationPath "$env:ProgramFiles\WindowsPowerShell\Modules" -Force
+# Expand the downloaded files.
+Expand-Archive az.zip -DestinationPath "$env:ProgramFiles\WindowsPowerShell\Modules" -Force
 
 Remove-Item az.zip
 ```
