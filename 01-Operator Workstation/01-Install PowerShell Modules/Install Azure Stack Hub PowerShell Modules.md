@@ -42,7 +42,7 @@ Install-Module -Name Az.BootStrapper -Force
 
 Install-AzProfile -Profile 2020-09-01-hybrid -Force
 
-Install-Module -Name AzureStack -RequiredVersion 2.2.0
+Install-Module -Name AzureStack -RequiredVersion 2.4.0
 ```
 
 When asked if you would like to install from an untrusted repository, choose "A" for all.
