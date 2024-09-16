@@ -171,6 +171,7 @@ In order to resolve our ADFS Farm name, we must create a DNS record that points 
 ## Prepare ADFS Certificate Template
 
 ADFS will require SSL Certificates for deployment and communication. These certificates can be requested from any trusted Certificate Authority, or you can use your own internal Certificate Authority.
+You will need to connect to ADCS-01 (10.100.100.11) using RDP to perform this task.
 
 1. In Administrative Tools, open Certificate Authority.
 
