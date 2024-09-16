@@ -28,25 +28,6 @@ Get-Module -ListAvailable | Where-Object {$_.Name -eq 'PowerShellGet'}
 
 4. Close all PowerShell windows.
 
-## Uninstall existing versions of the Azure Stack Hub PowerShell modules
-
-Before installing the required Azure Stack Hub version, make sure that you uninstall any previously installed Azure Stack Hub Azure Resource Manager or Az PowerShell modules. Uninstall the modules by using one of the following two methods:
-
-1. To uninstall the existing Azure Resource Manager and Az PowerShell modules, close all the active PowerShell sessions, and run the following cmdlets:
-
-```
-Get-Module -Name Azure* -ListAvailable | Uninstall-Module -Force -Verbose -ErrorAction Continue
-
-Get-Module -Name Azs.* -ListAvailable | Uninstall-Module -Force -Verbose -ErrorAction Continue
-
-Get-Module -Name Az.* -ListAvailable | Uninstall-Module -Force -Verbose -ErrorAction Continue
-```
-
-![](images/Picture3.png)
-
-**NOTE**: If you hit an error such as 'The module is already in use', close the PowerShell sessions that are using the modules and rerun the above script.
-
-If the Uninstall-Module does not succeed, delete all the folders that start with Azure, Az, or Azs. from the $env:PSModulePath locations. For Windows PowerShell, the locations might be C:\Program Files\WindowsPowerShell\Modules and C:\Users\{yourusername}\Documents\WindowsPowerShell\Modules. For PowerShell Core, the locations might be C:\Program Files\PowerShell\7\Modules and C:\Users\{yourusername}\Documents\PowerShell\Modules. Deleting these folders removes any existing Azure PowerShell modules.
 
 ## Install Azure Stack Hub Modules Online
 
