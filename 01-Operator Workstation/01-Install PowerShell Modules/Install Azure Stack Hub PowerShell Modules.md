@@ -59,14 +59,16 @@ AzureStack-Tools is a GitHub repository that hosts PowerShell modules for managi
 # Change directory to the root directory.
 cd \
 
-# Download the tools archive.
+# Set TLS Security Protocol.
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
+# Download the tools archive.
 invoke-webrequest https://github.com/Azure/AzureStack-Tools/archive/az.zip -OutFile az.zip
 
 # Expand the downloaded files.
 Expand-Archive az.zip -DestinationPath "$env:ProgramFiles\WindowsPowerShell\Modules" -Force
 
+# Delete the zip file
 Remove-Item az.zip
 ```
 
