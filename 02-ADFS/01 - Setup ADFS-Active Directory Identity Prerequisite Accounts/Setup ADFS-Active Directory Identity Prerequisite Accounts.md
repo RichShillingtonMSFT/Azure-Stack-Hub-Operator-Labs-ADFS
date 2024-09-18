@@ -172,6 +172,8 @@ In order to resolve our ADFS Farm name, we must create a DNS record that points 
 
 ADFS will require SSL Certificates for deployment and communication. These certificates can be requested from any trusted Certificate Authority, or you can use your own internal Certificate Authority.
 
+**NOTE: You will need to connect to ADCS-01 (10.100.100.11) using RDP to perform this task.
+
 1. In Administrative Tools, open Certificate Authority.
 
 
@@ -219,7 +221,7 @@ ADFS will require SSL Certificates for deployment and communication. These certi
 
 Certificates play the most critical role in securing communications between federation servers, Web Application Proxies, claims-aware applications, and Web clients. The SSL certificate is used for securing communications between federation servers and clients.
 
-1. Using RDP from the ASDK, connect to the ADFS server ADFS-01 by its IP Address 10.100.100.11 and login with Contoso\Administrator and the password supplied by the instructor.
+1. Using RDP from the ASDK, connect to the ADFS server ADFS-01 by its IP Address 10.100.100.12 and login with Contoso\Administrator and the password supplied by the instructor.
 
 
 2. Right click on the start button and click on Run

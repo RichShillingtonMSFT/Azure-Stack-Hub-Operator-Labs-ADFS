@@ -28,25 +28,6 @@ Get-Module -ListAvailable | Where-Object {$_.Name -eq 'PowerShellGet'}
 
 4. Close all PowerShell windows.
 
-## Uninstall existing versions of the Azure Stack Hub PowerShell modules
-
-Before installing the required Azure Stack Hub version, make sure that you uninstall any previously installed Azure Stack Hub Azure Resource Manager or Az PowerShell modules. Uninstall the modules by using one of the following two methods:
-
-1. To uninstall the existing Azure Resource Manager and Az PowerShell modules, close all the active PowerShell sessions, and run the following cmdlets:
-
-```
-Get-Module -Name Azure* -ListAvailable | Uninstall-Module -Force -Verbose -ErrorAction Continue
-
-Get-Module -Name Azs.* -ListAvailable | Uninstall-Module -Force -Verbose -ErrorAction Continue
-
-Get-Module -Name Az.* -ListAvailable | Uninstall-Module -Force -Verbose -ErrorAction Continue
-```
-
-![](images/Picture3.png)
-
-**NOTE**: If you hit an error such as 'The module is already in use', close the PowerShell sessions that are using the modules and rerun the above script.
-
-If the Uninstall-Module does not succeed, delete all the folders that start with Azure, Az, or Azs. from the $env:PSModulePath locations. For Windows PowerShell, the locations might be C:\Program Files\WindowsPowerShell\Modules and C:\Users\{yourusername}\Documents\WindowsPowerShell\Modules. For PowerShell Core, the locations might be C:\Program Files\PowerShell\7\Modules and C:\Users\{yourusername}\Documents\PowerShell\Modules. Deleting these folders removes any existing Azure PowerShell modules.
 
 ## Install Azure Stack Hub Modules Online
 
@@ -61,7 +42,7 @@ Install-Module -Name Az.BootStrapper -Force
 
 Install-AzProfile -Profile 2020-09-01-hybrid -Force
 
-Install-Module -Name AzureStack -RequiredVersion 2.2.0
+Install-Module -Name AzureStack -RequiredVersion 2.4.0
 ```
 
 When asked if you would like to install from an untrusted repository, choose "A" for all.
@@ -75,14 +56,19 @@ AzureStack-Tools is a GitHub repository that hosts PowerShell modules for managi
 1. To get these tools, clone the GitHub repository from the az branch or download the AzureStack-Tools folder by running the following script:
 
 ```
+# Change directory to the root directory.
 cd \
 
+# Set TLS Security Protocol.
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
+# Download the tools archive.
 invoke-webrequest https://github.com/Azure/AzureStack-Tools/archive/az.zip -OutFile az.zip
 
-expand-archive az.zip -DestinationPath "$env:ProgramFiles\WindowsPowerShell\Modules" -Force
+# Expand the downloaded files.
+Expand-Archive az.zip -DestinationPath "$env:ProgramFiles\WindowsPowerShell\Modules" -Force
 
+# Delete the zip file
 Remove-Item az.zip
 ```
 

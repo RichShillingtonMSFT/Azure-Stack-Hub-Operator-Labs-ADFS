@@ -6,7 +6,7 @@ To Integrate Azure Stack Hub internal ADFS with your Active Directory you will n
 
 A Windows Server has been deployed for you to use for the ADFS Role. The server's name is ADFS-01 with an IP address of 10.100.100.11.
 
-1. From your **ASDK** , connect to **ADFS-01** using **RDP** with its IP address **10.100.100.11**.
+1. From your **ASDK** , connect to **ADFS-01** using **RDP** with its IP address **10.100.100.12**.
 
 2. Click the **Start button** and click on **Server manager**.
 

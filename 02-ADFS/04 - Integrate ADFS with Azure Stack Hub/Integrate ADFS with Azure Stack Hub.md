@@ -104,7 +104,7 @@ Set-ServiceAdminOwner -ServiceAdminOwnerUpn "Your Service Admin Account Full UPN
 
 ## Configure relying party on existing AD FS deployment
 
-1. Connect to the Contoso ADFS server (10.100.100.11) using RDP.
+1. Connect to the Contoso ADFS server (10.100.100.12) using RDP.
 
 2. Copy the following content into a .txt file. Save the file as c:\ClaimIssuanceRules.txt on your datacenter's ADFS Server:
 
