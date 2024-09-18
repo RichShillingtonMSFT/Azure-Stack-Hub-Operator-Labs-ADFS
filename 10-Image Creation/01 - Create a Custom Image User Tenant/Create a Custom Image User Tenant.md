@@ -63,7 +63,7 @@ Each subscription has the ability to create their own images they can use for de
  The $Source variable should point to the 2019Server.vhd.
 
 ```
-$Source = 'C:\LabFiles\10-Image Creation\2019Server.vhd'
+$Source = 'C:\LabFiles\2019Server.vhd'
 ```
 
 The $Destination variable must include the modified Blob Service SAS URL you created in the previous step.
