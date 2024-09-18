@@ -19,7 +19,7 @@ Notice the available information on the capacity available in the ASDK and how o
 
 2. Login using the **administrator@contoso.local** and respective password
 
-3. Run **Get-AzsSubscriberUsage** and provide the reported start time as yyyy-mm-dd (yesterday) and ReportedEndTime as yyyy-mm-dd (today)
+3. Run **Get-AzsSubscriberUsage** and provide the reported start time as yyyy-mm-dd (yesterday) and ReportedEndTime as yyyy-mm-dd (tomorrow)
 
 Example: Get-AzsSubscriberUsage -ReportedStartTime 2023-01-01 -ReportedEndTime 2023-01-12
 
