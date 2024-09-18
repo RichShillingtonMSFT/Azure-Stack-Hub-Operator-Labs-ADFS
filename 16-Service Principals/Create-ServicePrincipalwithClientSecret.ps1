@@ -9,7 +9,7 @@ $PEPCredentials = New-Object System.Management.Automation.PSCredential('AzureSta
 $PEPSession = New-PSSession -ComputerName $PEPIP -ConfigurationName PrivilegedEndpoint -Credential $PEPCredentials -SessionOption (New-PSSessionOption -Culture en-US -UICulture en-US)
 
 # Create Service Principal
-$SpObject = Invoke-Command -Session $PEPSession -ScriptBlock {New-GraphApplication -Name $AppName -GenerateClientSecret}
+$SpObject = Invoke-Command -Session $PEPSession -ScriptBlock {New-GraphApplication -Name $Using:AppName -GenerateClientSecret}
 
 # Create Service Principal Credential Object
 $SecurePassword = $SpObject.ClientSecret | ConvertTo-SecureString -AsPlainText -Force

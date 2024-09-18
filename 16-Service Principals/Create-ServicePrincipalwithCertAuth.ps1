@@ -14,7 +14,7 @@ $NewCert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" -
 $Cert = Get-Item "Cert:\CurrentUser\My\$($NewCert.Thumbprint)"
 
 # Create Service Principal
-$SpObject = Invoke-Command -Session $PEPSession -ScriptBlock {New-GraphApplication -Name "$AppName" -ClientCertificates $using:cert}
+$SpObject = Invoke-Command -Session $PEPSession -ScriptBlock {New-GraphApplication -Name "$Using:AppName" -ClientCertificates $using:cert}
 
 # Create Service Principal Credential Object
 
