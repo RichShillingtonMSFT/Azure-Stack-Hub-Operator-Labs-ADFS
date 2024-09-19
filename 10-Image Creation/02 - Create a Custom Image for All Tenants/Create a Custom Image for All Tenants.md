@@ -59,4 +59,4 @@ It should look like this when complete.
 ![](images/Picture6.png)
 
 
-5. Once complete, click Save. The proceed to fill out the required fields and deploy your VM.
+5. Once complete, click Save. Fill out the required fields and deploy your VM.
